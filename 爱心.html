@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .y{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            left: 200px;
+            top:200px;
+            background-color:pink;
+            transform: rotate(45deg);
+            animation:move 2s 0s linear infinite;
+        }
+        .y::before{
+            content:"";
+            position: absolute;
+            top:-100px;
+            width: 200px;
+            height: 200px;
+            background-color:pink;
+            border-radius: 50%;
+        }
+        .y::after{
+            content:"";
+            position: absolute;
+            left:-100px;
+            width: 200px;
+            height: 200px;
+            background-color:pink;
+            border-radius: 50%;
+
+        }
+        @keyframes move {
+            50% {
+                transform: rotate(45deg) scale(1.2)
+            }
+            100%{
+                transform: rotate(45deg) scale(1)
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="y"></div>
+</body>
+</html>
